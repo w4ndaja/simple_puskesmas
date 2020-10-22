@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: puskesmas
--- Generation Time: 2020-10-16 19:11:38.8540
+-- Generation Time: 2020-10-22 16:09:40.4980
 -- -------------------------------------------------------------
 
 
@@ -61,7 +61,7 @@ CREATE TABLE `patients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 DROP TABLE IF EXISTS `services`;
 CREATE TABLE `services` (
@@ -74,7 +74,7 @@ CREATE TABLE `services` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `doctors` (`id`, `code`, `name`, `specialist`, `address`, `created_at`, `updated_at`) VALUES
 ('4', 'Quisquam aliquam exp', 'Moana Mclaughlin', 'Velit omnis aut sed', 'Voluptas et quasi mo', '2020-10-16 10:11:43', '2020-10-16 10:11:51'),
@@ -91,16 +91,24 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 ('4', '2020_10_16_080423_create_employees_table', '1');
 
 INSERT INTO `patients` (`id`, `code`, `name`, `address`, `gender`, `sick`, `created_at`, `updated_at`) VALUES
-('5', 'Laudantium officia', 'Lilah Holloway', 'Non recusandae Volu', 'female', 'Officiis proident o', '2020-10-16 09:28:44', '2020-10-16 09:28:44'),
-('6', 'Nihil error doloribu', 'Stewart Mcclure', 'Excepturi in reprehe', 'male', 'At dolorem est volup', '2020-10-16 09:28:58', '2020-10-16 09:28:58'),
 ('7', 'Architecto facilis e', 'Alana Webb', 'Vel sed et aut volup', 'female', 'Commodi ut est conse', '2020-10-16 09:29:04', '2020-10-16 09:29:04'),
 ('8', 'Natus quas aliquid e', 'Griffith Fisher', 'Quas blanditiis cumq', 'male', 'Commodi est ullam e', '2020-10-16 09:29:08', '2020-10-16 09:29:08'),
 ('9', 'Voluptatem Sapiente', 'Althea Randolph', 'Excepturi nobis minu', 'male', 'Qui tempore itaque', '2020-10-16 09:29:11', '2020-10-16 09:29:11'),
 ('10', 'Amet maiores except', 'Sylvester Rodriguez', 'Odio cillum labore i', 'male', 'Nostrud mollitia ius', '2020-10-16 09:31:04', '2020-10-16 09:31:04'),
-('11', 'Ratione sapiente exc', 'Louis Reed', 'Perspiciatis conseq', 'male', 'Aut dolor eius modi', '2020-10-16 09:31:07', '2020-10-16 09:31:07');
+('11', 'Ratione sapiente exc', 'Louis Reed', 'Perspiciatis conseq', 'male', 'Aut dolor eius modi', '2020-10-16 09:31:07', '2020-10-16 09:31:07'),
+('12', 'Odit perspiciatis q', 'Molly Ortiz', 'Culpa occaecat dolor', 'female', 'Qui veritatis dolore', '2020-10-16 12:17:08', '2020-10-16 12:17:08'),
+('13', 'Doloribus consequat', 'Quincy Roberson', 'Quis consectetur as', 'female', 'Repellendus Repelle', '2020-10-16 12:17:12', '2020-10-16 12:17:12'),
+('14', 'Dolor non esse illum', 'Hyacinth Burt', 'Quos ut corporis eos', 'male', 'Ut quae velit cumque', '2020-10-16 12:17:16', '2020-10-16 12:17:16'),
+('15', 'Sint harum ullamco', 'Raja Bryan', 'Pariatur Id maiores', 'male', 'Voluptas lorem cupid', '2020-10-16 12:17:19', '2020-10-16 12:17:19'),
+('16', 'Sed sed quo id labor', 'Kellie Hayes', 'Aute itaque et volup', 'male', 'Libero deserunt enim', '2020-10-16 12:17:22', '2020-10-16 12:17:22'),
+('17', 'Non cupiditate quod', 'Sopoline Howell', 'Nihil in et magni fu', 'male', 'Veniam ad voluptate', '2020-10-17 07:05:36', '2020-10-17 07:05:36'),
+('18', 'cutsalsa0100', 'Salsa Tri Handayani', 'JL jamin ginting, sdkfkshdfkshdf', 'female', 'Sakit hati', '2020-10-22 07:41:37', '2020-10-22 07:41:37'),
+('19', 'Illum voluptate duc', 'Lee Mcguire', 'Maxime quidem expedi', 'male', 'Sint error nisi ea q', '2020-10-22 08:05:37', '2020-10-22 08:05:37');
 
 INSERT INTO `services` (`id`, `checkin_date`, `checkout_date`, `patient_id`, `doctor_id`, `price`, `created_at`, `updated_at`) VALUES
-('1', '2002-06-22', '2012-11-23', '7', '4', '640000', '2020-10-16 10:32:08', '2020-10-16 10:32:08');
+('1', '2002-06-22', '2012-11-23', '7', '4', '640000', '2020-10-16 10:32:08', '2020-10-16 10:32:08'),
+('2', '2020-10-22', '2020-10-22', '18', '5', '100000', '2020-10-22 07:41:59', '2020-10-22 07:41:59'),
+('3', '2008-06-21', '1987-11-23', '13', '5', '791000', '2020-10-22 08:09:31', '2020-10-22 08:09:31');
 
 
 

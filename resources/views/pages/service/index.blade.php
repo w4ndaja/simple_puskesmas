@@ -4,11 +4,13 @@
 <div class="container">
     <div class="row">
         @if(session('success'))
-        <div class="alert alert-success" id="message">
-            {{session('success')}}
-            <script>
-                setTimeout(() => { document.getElementById('message').remove() }, 2000);
-            </script>
+        <div class="col-md-12">
+            <div class="alert alert-success" id="message">
+                {{session('success')}}
+                <script>
+                    setTimeout(() => { document.getElementById('message').remove() }, 2000);
+                </script>
+            </div>
         </div>
         @endif
         <div class="col-md-4 mb-4">
@@ -71,7 +73,7 @@
                                 <td>{{ $service->checkout_date->format('d M Y') }}</td>
                                 <td>{{ $service->patient->code }} - {{$service->patient->name}}</td>
                                 <td>{{ $service->doctor->code }} - {{$service->doctor->name}}</td>
-                                <td><span class="text-nowrap rounded bg-info p-1 my-auto">Rp. {{ $service->price }}</span></td>
+                                <td><span class="text-nowrap rounded bg-info p-1 my-auto">Rp. {{ number_format($service->price, 2, ',', '.') }}</span></td>
                                 <td class="d-flex flex-row">
                                     <a href="{{route('services.edit', $service->id)}}" class="btn btn-info mx-1">Edit</a>
                                     <a href="{{route('services.confirm-delete', $service->id)}}" class="btn btn-danger mx-1">Hapus</a>
