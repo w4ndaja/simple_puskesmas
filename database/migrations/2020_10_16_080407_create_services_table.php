@@ -20,6 +20,7 @@ class CreateServicesTable extends Migration
             $table->foreignId('patient_id');
             $table->foreignId('doctor_id');
             $table->double('price');
+            $table->text('sick');
             $table->timestamps();
         });
     }

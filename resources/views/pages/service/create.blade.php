@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Tambah Pelayanan')
 @section('content')
-<div class="container">
+<div class="container py-3">
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -23,8 +23,7 @@
                             <div class="col-md-3 my-1"> <label>Pasien</label> </div>
                             <div class="col-md-9 my-1">
                                 <select name="patient_id" class="form-control @error('patient_id') border-danger @enderror">
-                                    <option value="" disabled {{$service->patient ? '' : 'selected'}} >Pilih Pasien</option>
-                                    @foreach ($patients as $patient)
+a                                    @foreach ($patients as $patient)
                                         <option value="{{ $patient->id }}" {{$service->patient && $service->patient->id == $patient->id ? 'checked' : ''}} >{{ $patient->code }} - {{$patient->name}}</option>
                                     @endforeach
                                 </select>
@@ -38,6 +37,11 @@
                                     @endforeach
                                 </select>
                                 @error('doctor_id') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="col-md-3 my-1"> <label>Penyakit</label> </div>
+                            <div class="col-md-9 my-1">
+                                <input type="text" name="sick" class="form-control @error('sick') border-danger @enderror" value="{{ $patient->sick ?? old('sick') }}">
+                                @error('sick') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-3 my-1"> <label>Biaya</label> </div>
                             <div class="col-md-9 my-1">

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Login')
 @section('content')
-    <div class="container">
+    <div class="container-fluid py-3" style="min-height:91vh;background-color:#20481e">
         <div class="row d-flex justify-content-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">

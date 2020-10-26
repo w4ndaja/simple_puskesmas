@@ -43,7 +43,7 @@ class PatientController extends Controller
 
     public function getForm()
     {
-        return request()->only('code', 'name', 'address', 'gender', 'sick');
+        return request()->only('code', 'name', 'address', 'gender');
     }
 
     public function validateForm($update = null)
@@ -53,7 +53,6 @@ class PatientController extends Controller
             'name' => 'required',
             'address' => 'required',
             'gender' => 'required',
-            'sick' => 'required',
         ]);
     }
 

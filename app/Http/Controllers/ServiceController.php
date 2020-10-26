@@ -16,10 +16,13 @@ class ServiceController extends Controller
      */
     public function index()
     {
+        $all_services = Service::all();
         $services = Service::with('doctor:id,code,name', 'patient:id,code,name')->paginate(10);
+        $service_count = $all_services->count();
+        $service_sum_price = $all_services->sum('price');
         $patient_count = Patient::all()->count();
         $doctor_count = Doctor::all()->count();
-        return view('pages.service.index', compact('services', 'patient_count', 'doctor_count'));
+        return view('pages.service.index', compact('services', 'patient_count', 'doctor_count', 'service_count', 'service_sum_price'));
     }
 
     /**
@@ -56,6 +59,7 @@ class ServiceController extends Controller
             'patient_id',
             'doctor_id',
             'price',
+            'sick',
         );
     }
 
@@ -67,6 +71,7 @@ class ServiceController extends Controller
             'patient_id' => 'required',
             'doctor_id' => 'required',
             'price' => 'required',
+            'sick' => 'required',
         ]);
     }
 

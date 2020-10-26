@@ -1,5 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{url('/')}}">Puskesmas</a>
+    <a class="navbar-brand" href="{{url('/')}}">
+        <img src="{{asset('logo.png')}}" alt="" height="48">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,10 +17,11 @@
             <li class="nav-item  {{Request::is('services') ? 'active' : ''}}">
                 <a class="nav-link" href="{{route('services.index')}}">Pelayanan</a>
             </li>
-
-            <li class="nav-item  {{Request::is('employees') ? 'active' : ''}}">
+            @if(Auth::id() == 1)
+            <li class="nav-item mr-3  {{Request::is('employees') ? 'active' : ''}}">
                 <a class="nav-link" href="{{route('employees.index')}}">Pegawai</a>
             </li>
+            @endif
             <li class="nav-item">
                 <form action="{{route('logout')}}" method="post">
                     @csrf

@@ -30,10 +30,11 @@ Route::middleware('auth')->group(function(){
         'patients' => PatientController::class,
         'doctors' => DoctorController::class,
         'services' => ServiceController::class,
-        'employees' => EmployeeController::class,
+
     ]);
+    Route::resource('employees', EmployeeController::class)->middleware('superadmin');
     Route::get('patients/confirm-delete/{patient}',[PatientController::class, 'confirmDelete'])->name('patients.confirm-delete');
     Route::get('doctors/confirm-delete/{doctor}',[DoctorController::class, 'confirmDelete'])->name('doctors.confirm-delete');
     Route::get('services/confirm-delete/{service}',[ServiceController::class, 'confirmDelete'])->name('services.confirm-delete');
-    Route::get('employees/confirm-delete/{employee}',[EmployeeController::class, 'confirmDelete'])->name('employees.confirm-delete');
+    Route::get('employees/confirm-delete/{employee}',[EmployeeController::class, 'confirmDelete'])->name('employees.confirm-delete')->middleware('superadmin');
 });

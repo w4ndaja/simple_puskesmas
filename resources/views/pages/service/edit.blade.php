@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Edit Pelayanan')
 @section('content')
-<div class="container">
+<div class="container py-3">
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -39,6 +39,11 @@
                                     @endforeach
                                 </select>
                                 @error('doctor_id') <span class="text-danger">{{ $message }}</span> @enderror
+                            </div>
+                            <div class="col-md-3 my-1"> <label>Penyakit</label> </div>
+                            <div class="col-md-9 my-1">
+                                <input type="text" name="sick" class="form-control @error('sick') border-danger @enderror" value="{{ $patient->sick ?? old('sick') }}">
+                                @error('sick') <span class="text-danger">{{ $message }}</span> @enderror
                             </div>
                             <div class="col-md-3 my-1"> <label>Biaya</label> </div>
                             <div class="col-md-9 my-1">

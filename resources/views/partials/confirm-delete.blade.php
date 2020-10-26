@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Konfirmasi Hapus')
 @section('content')
-<div class="container">
+<div class="container py-5">
     <div class="d-flex justify-content-center align-items center">
         <div class="card">
             <form action="{{ route($type.".destroy", $data->id) }}" method="post">

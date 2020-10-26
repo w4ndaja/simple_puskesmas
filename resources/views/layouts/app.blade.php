@@ -8,13 +8,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-
+    <link rel="icon" href="{{asset('favicon.png')}}">
     <title>@yield('title')</title>
 </head>
 
 <body>
     @include('partials.navbar')
-    <div class="py-3">
+    <div>
         @yield('content')
     </div>
 
