@@ -73,8 +73,8 @@
                             <tr>
                                 <td>{{ $service->checkin_date->format('d M Y') }}</td>
                                 <td>{{ $service->checkout_date->format('d M Y') }}</td>
-                                <td>{{ $service->patient->code }} - {{$service->patient->name}}</td>
-                                <td>{{ $service->doctor->code }} - {{$service->doctor->name}}</td>
+                                <td>{{ $service->patient->code ?? '' }} - {{$service->patient->name ?? ''}}</td>
+                                <td>{{ $service->doctor->code ?? '' }} - {{$service->doctor->name ?? ''}}</td>
                                 <td><span class="text-nowrap rounded bg-info p-1 my-auto">Rp. {{ number_format($service->price, 2, ',', '.') }}</span></td>
                                 <td>{{ $service->sick }}</td>
                                 <td class="d-flex flex-row">
